@@ -13,9 +13,11 @@ services:
     volumes:
       - ./janus/etc/janus/:/opt/janus/etc/janus/
       - ./janus/janus.log:/var/log/janus.log
+      - ./janus/certs/certificate.crt:/opt/janus/share/janus/certs/mycert.crt
+      - ./janus/certs/privateKey.key:/opt/janus/share/janus/certs/mycert.key
     ports:
       - 8088:8088
-      - 8188:8188
+      - 8089:8089
     networks:
       - back-tier
       - front-tier
